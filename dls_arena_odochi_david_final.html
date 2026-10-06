@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLS Arena | Odochi David</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#070b12;color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(7,11,18,.92);backdrop-filter:blur(12px);border-bottom:1px solid #1e293b}
+.nav{max-width:1150px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:22px;letter-spacing:1px}.logo span{color:#22c55e}
+nav{display:flex;gap:24px;font-size:14px;color:#cbd5e1}
+.hero{min-height:620px;display:flex;align-items:center;background:radial-gradient(circle at 75% 30%,#14532d 0,transparent 35%),linear-gradient(135deg,#070b12,#101827)}
+.hero-inner{max-width:1150px;margin:auto;padding:80px 22px;width:100%}
+.badge{display:inline-block;background:#10251a;color:#4ade80;border:1px solid #166534;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:20px}
+h1{font-size:clamp(48px,8vw,88px);line-height:.95;max-width:800px;letter-spacing:-4px}
+h1 span{color:#22c55e}
+.hero p{max-width:650px;color:#aab5c5;margin:25px 0;font-size:18px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 22px;border-radius:10px;font-weight:800;display:inline-block;cursor:pointer;border:0}
+.primary{background:#22c55e;color:#041008}.whatsapp{background:#25D366;color:#06140a}.secondary{border:1px solid #334155;color:#fff;background:#111827}
+section{max-width:1150px;margin:auto;padding:75px 22px}
+.section-title{font-size:34px;margin-bottom:10px}.muted{color:#94a3b8;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#0d1420;border:1px solid #1e293b;border-radius:16px;padding:25px}
+.card h3{margin:10px 0}.icon{font-size:28px}
+.tournament{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.status{color:#4ade80;font-size:12px;font-weight:800}
+.form-wrap{max-width:700px;background:#0d1420;border:1px solid #1e293b;border-radius:18px;padding:30px}
+form{display:grid;gap:15px}
+label{font-size:13px;color:#cbd5e1;font-weight:700}
+input,select{width:100%;padding:14px;background:#080d15;border:1px solid #334155;border-radius:9px;color:#fff;outline:none}
+input:focus,select:focus{border-color:#22c55e}
+footer{border-top:1px solid #1e293b;color:#94a3b8;text-align:center;padding:30px 20px}
+.small{font-size:13px;color:#64748b}
+@media(max-width:760px){nav{display:none}.grid{grid-template-columns:1fr}.tournament{flex-direction:column;align-items:flex-start}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo">DLS<span>ARENA</span></div>
+    <nav><a href="#home">Home</a><a href="#tournaments">Tournaments</a><a href="#register">Register</a><a href="#payment">Payment</a><a href="#about">About</a></nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">DREAM LEAGUE SOCCER • COMPETE • CONQUER</div>
+    <h1>ENTER THE <span>ARENA.</span></h1>
+    <p>Welcome to DLS Arena, a competitive gaming hub for Dream League Soccer players. Join tournaments, test your skills and battle for the top spot.</p>
+    <div class="buttons"><a class="btn primary" href="#register">Register for Tournament</a><a class="btn secondary" href="#tournaments">View Tournaments</a></div>
+    <p class="small" style="margin-top:28px">Created & managed by <strong style="color:#fff">Odochi David</strong></p>
+  </div>
+</section>
+
+<section id="tournaments">
+  <h2 class="section-title">Featured Tournament</h2>
+  <p class="muted">Choose your competition and secure your place.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">🏆</div><h3>DLS Champions Cup</h3><p class="muted">Knockout competition for serious DLS players.</p><div class="tournament"><span class="status">REGISTRATION OPEN</span><strong>16 Players</strong></div></div>
+    <div class="card"><div class="icon">⚡</div><h3>Elite Weekend League</h3><p class="muted">Fast-paced weekend battles and leaderboard rankings.</p><div class="tournament"><span class="status">COMING SOON</span><strong>32 Players</strong></div></div>
+    <div class="card"><div class="icon">🔥</div><h3>Jaden Super League</h3><p class="muted">The ultimate community tournament hosted by Odochi David.</p><div class="tournament"><span class="status">COMING SOON</span><strong>16 Players</strong></div></div>
+  </div>
+</section>
+
+<section id="register">
+  <h2 class="section-title">Tournament Registration</h2>
+  <p class="muted">Enter your details below to request a tournament slot.</p>
+  <div class="form-wrap">
+    <form onsubmit="registerPlayer(event)">
+      <div><label>Full Name</label><input id="name" required placeholder="Enter your name"></div>
+      <div><label>DLS Username / Gamer Tag</label><input id="tag" required placeholder="Your DLS gamer tag"></div>
+      <div><label>Phone / WhatsApp</label><input id="phone" required placeholder="e.g. 08012345678"></div>
+      <div><label>Select Tournament</label><select id="tour" required><option value="">Choose tournament</option><option>DLS Champions Cup</option><option>Elite Weekend League</option><option>Jaden Super League</option></select></div>
+      <button class="btn primary" type="submit">Submit Registration</button>
+      <a class="btn whatsapp" href="https://wa.me/2347086598453?text=Hello%20Odochi%20David%2C%20I%20want%20to%20register%20for%20a%20DLS%20tournament." target="_blank" rel="noopener">💬 Contact Odochi David on WhatsApp</a>
+      <p class="small">WhatsApp: <strong style="color:#fff">07086598453</strong> — tap the button to chat directly.</p>
+    </form>
+    <p id="message" style="margin-top:18px;color:#4ade80;font-weight:700"></p>
+  </div>
+</section>
+
+
+<section id="payment">
+  <h2 class="section-title">Tournament Payment</h2>
+  <p class="muted">Ready to compete? Make your tournament payment through OPay, then send your payment confirmation to Odochi David on WhatsApp.</p>
+  <div class="form-wrap">
+    <div class="card" style="margin-bottom:18px">
+      <div class="icon">💳</div>
+      <h3>OPay Payment Details</h3>
+      <p style="margin-top:12px"><strong>Account Name:</strong><br>
+      <span style="font-size:20px">David Odochi Akakuru</span></p>
+      <p style="margin-top:12px"><strong>OPay Account Number:</strong><br>
+      <span style="font-size:28px;font-weight:900;letter-spacing:1px;color:#4ade80">7086598453</span></p>
+    </div>
+    <div class="card">
+      <h3>Payment Instructions</h3>
+      <p class="muted" style="margin:8px 0 0">
+        1. Confirm the tournament you want to play.<br>
+        2. Send the tournament entry fee to the OPay account above.<br>
+        3. Keep your payment receipt or screenshot.<br>
+        4. Contact Odochi David on WhatsApp with your name, DLS gamer tag and payment proof.
+      </p>
+      <a class="btn whatsapp" href="https://wa.me/2347086598453?text=Hello%20Odochi%20David%2C%20I%20have%20made%20my%20DLS%20tournament%20payment.%20My%20name%20is%20%5BName%5D%20and%20my%20DLS%20gamer%20tag%20is%20%5BGamer%20Tag%5D.%20I%20am%20sending%20my%20payment%20proof." target="_blank" rel="noopener" style="margin-top:18px">💬 Send Payment Proof on WhatsApp</a>
+    </div>
+
+    <div style="margin-top:20px;padding:20px;border:1px solid #7f1d1d;border-radius:12px;background:#2a0d0d">
+      <h3 style="color:#f87171;margin-bottom:10px">⚠️ IMPORTANT REGISTRATION NOTICE</h3>
+      <p style="color:#fecaca">
+        For your registration to be accepted, you <strong>must complete your tournament payment</strong>.
+        If payment is not completed, your registration will remain <strong>incomplete</strong>, and you
+        <strong>will not be eligible to compete in any tournament</strong>.
+      </p>
+      <p style="color:#fff;margin-top:10px">
+        📸 <strong>Always send a screenshot of your payment receipt as evidence</strong> after making payment.
+      </p>
+      <p style="color:#fca5a5;margin-top:10px;font-weight:700">
+        Your registration will only be confirmed after your payment has been verified.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About DLS Arena</h2>
+  <p class="muted">A clean, competitive space built for Dream League Soccer fans. The platform is designed to make tournament registration simple while giving players a professional gaming community identity.</p>
+  <div class="card"><h3>Founder / Tournament Host</h3><p style="font-size:24px;font-weight:900">Odochi David</p><p class="muted" style="margin:5px 0 0">DLS Gaming • Tournament Management • Competitive Community</p></div>
+</section>
+</main>
+
+<footer>
+  <strong>DLS ARENA</strong> — Built for the competition.<br>
+  <span class="small">© 2026 Odochi David. All rights reserved.</span>
+</footer>
+
+<script>
+function registerPlayer(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value;
+ const tour=document.getElementById('tour').value;
+ document.getElementById('message').textContent="Registration request received for "+name+" — "+tour+"! 🏆";
+}
+</script>
+</body>
+</html>
